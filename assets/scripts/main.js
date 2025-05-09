@@ -1,7 +1,7 @@
 let config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 300,
+    width: 400,
+    height: 900,
     scene: [TitleScene, GameScene, GameOverScene]
 };
 

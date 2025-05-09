@@ -1,8 +1,11 @@
-let config = {
+const config = {
     type: Phaser.AUTO,
     width: 400,
     height: 900,
-    scene: [TitleScene, GameScene, GameOverScene]
+    physics: {
+        default: 'arcade'
+    },
+    scene: GameScene
 };
 
-let game = new Phaser.Game(config);
+const game = new Phaser.Game(config);

@@ -80,10 +80,6 @@ class GameScene extends Phaser.Scene {
         // Timer
         this.startTime = this.time.now;
 
-        // this.survivalTimer = this.time.delayedCall(1000, () => {
-        //     this.timeSurvivedText.setText("Time Survived: "+this.time.elapsed);
-        // })
-
         // Events
         this.spawnRandomMeteorTimer();
         this.spawnRandomEnemy();
@@ -107,8 +103,6 @@ class GameScene extends Phaser.Scene {
             this.player.anims.play('center');
         }
 
-        // this.timeSurvived = this.time.now * 0.001;
-        // this.survivalTimer.elapsed;
         this.timeSurvived = (this.time.now - this.startTime) / 1000;
         this.timeSurvivedText.setText("Time Survived: " + Math.floor(this.timeSurvived));
 

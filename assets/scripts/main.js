@@ -5,7 +5,6 @@ const config = {
     physics: {
         default: 'arcade'
     },
-    // scene: [TitleScene, GameScene, GameOverScene]
     scene: [TitleScene, GameScene]
 };
 

@@ -4,7 +4,9 @@ let menuMusic;
 class TitleScene extends Phaser.Scene{
     constructor() {
         super("TitleScene");
+    }
 
+    init() {
         this.playButton = null
     }
 
@@ -27,6 +29,9 @@ class TitleScene extends Phaser.Scene{
         blueStars = this.add.tileSprite(-80, 0, 400, 900, 'tileBgStars').setOrigin(0, 0).setScale(2);
 
         this.add.text(135,300,"Space Shooter");
+        this.add.text(20,820,"Playable Assets: Gustavo Vituri");
+        this.add.text(20,840,"Background Assets: Ansimuz");
+        this.add.text(20,860,"Music & SFX: Kyra van Meijl")
 
         this.playButton = this.add.sprite(200,450,'playButtonNormal').setScale(5).setInteractive(
             {useHandCursor: true}

@@ -1,8 +1,9 @@
 class GameScene extends Phaser.Scene {
     constructor() {
         super("GameScene");
+    }
 
-        // Initialize properties
+    init() {
         this.player = null;
         this.cursors = null;
         this.spacebar = null;
@@ -10,14 +11,12 @@ class GameScene extends Phaser.Scene {
         this.enemyProjectiles = null;
         this.meteors = null;
         this.enemies = null;
-        // this.blueBg = null;
-        // this.blueStars = null;
         this.gameBgm = null;
-        this.playerHealth = 3;
         this.timeSurvived = 0;
         this.score = 0;
         this.scoreText = null;
         this.timeSurvivedText = null;
+        this.survivalTimer = null;
     }
 
     preload() {
@@ -78,6 +77,13 @@ class GameScene extends Phaser.Scene {
         this.meteors = this.physics.add.group();
         this.enemies = this.physics.add.group();
 
+        // Timer
+        this.startTime = this.time.now;
+
+        // this.survivalTimer = this.time.delayedCall(1000, () => {
+        //     this.timeSurvivedText.setText("Time Survived: "+this.time.elapsed);
+        // })
+
         // Events
         this.spawnRandomMeteorTimer();
         this.spawnRandomEnemy();
@@ -101,8 +107,10 @@ class GameScene extends Phaser.Scene {
             this.player.anims.play('center');
         }
 
-        this.timeSurvived = this.time.now * 0.001;
-        this.timeSurvivedText.setText("Time Survived: " + Math.round(this.timeSurvived));
+        // this.timeSurvived = this.time.now * 0.001;
+        // this.survivalTimer.elapsed;
+        this.timeSurvived = (this.time.now - this.startTime) / 1000;
+        this.timeSurvivedText.setText("Time Survived: " + Math.floor(this.timeSurvived));
 
         scrollBg();
     }
@@ -134,8 +142,10 @@ class GameScene extends Phaser.Scene {
     }
 
     shootEnemyProjectilesLoop(enemy) {
-        this.shootEnemyProjectiles(enemy);
-        this.time.delayedCall(2000, () => this.shootEnemyProjectilesLoop(enemy));
+        if (enemy.body.enable) {
+            this.shootEnemyProjectiles(enemy);
+            this.time.delayedCall(2000, () => this.shootEnemyProjectilesLoop(enemy));
+        }
     }
 
     spawnEnemy() {
@@ -175,6 +185,7 @@ class GameScene extends Phaser.Scene {
 
     gameOverScene() {
         this.gameBgm.stop();
+        this.scene.stop();
         this.scene.start('TitleScene');
     }
 }

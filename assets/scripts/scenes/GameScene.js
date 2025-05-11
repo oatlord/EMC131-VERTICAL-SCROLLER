@@ -31,8 +31,6 @@ class GameScene extends Phaser.Scene {
             { frameWidth: 8, frameHeight: 8 }
         )
 
-        // loading in tilemap assets
-
         // loading in audio
         this.load.audio('gameBgm', '/assets/audio/bgm/Space Main Theme.mp3');
 

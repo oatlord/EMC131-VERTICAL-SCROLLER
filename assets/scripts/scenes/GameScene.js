@@ -173,7 +173,7 @@ class GameScene extends Phaser.Scene {
         player.disableBody(true, true);
         this.sound.play('hitSfx');
 
-        alert("You lose!");
+        alert("You lost! You survived for "+(Math.floor(this.timeSurvived))+" seconds and scored "+this.score+" points.");
         this.gameOverScene();
     }
 

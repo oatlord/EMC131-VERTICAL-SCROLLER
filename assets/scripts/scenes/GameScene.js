@@ -21,24 +21,24 @@ class GameScene extends Phaser.Scene {
 
     preload() {
         // loading in spritesheets
-        this.load.spritesheet('player', '/assets/images/entities/SpaceShooterAssetPack_Ships.png',
+        this.load.spritesheet('player', 'assets/images/entities/SpaceShooterAssetPack_Ships.png',
             { frameWidth: 8, frameHeight: 8 }
         );
-        this.load.spritesheet('projectile', '/assets/images/projectile/SpaceShooterAssetPack_Projectiles.png',
+        this.load.spritesheet('projectile', 'assets/images/projectile/SpaceShooterAssetPack_Projectiles.png',
             { frameWidth: 8, frameHeight: 8 }
         )
-        this.load.spritesheet('misc', '/assets/images/misc/SpaceShooterAssetPack_Miscellaneous.png',
+        this.load.spritesheet('misc', 'assets/images/misc/SpaceShooterAssetPack_Miscellaneous.png',
             { frameWidth: 8, frameHeight: 8 }
         )
 
         // loading in audio
-        this.load.audio('gameBgm', '/assets/audio/bgm/Space Main Theme.mp3');
+        this.load.audio('gameBgm', 'assets/audio/bgm/Space Main Theme.mp3');
 
         // loading in sfx
-        this.load.audio('break1Sfx', '/assets/audio/sfx/Block Break 1.wav');
-        this.load.audio('enemyHitSfx', '/assets/audio/sfx/Boss hit 1.wav');
-        this.load.audio('shootSfx', '/assets/audio/sfx/Blow 1V2.mp3');
-        this.load.audio('hitSfx', '/assets/audio/sfx/Hit damage 1.wav');
+        this.load.audio('break1Sfx', 'assets/audio/sfx/Block Break 1.wav');
+        this.load.audio('enemyHitSfx', 'assets/audio/sfx/Boss hit 1.wav');
+        this.load.audio('shootSfx', 'assets/audio/sfx/Blow 1V2.mp3');
+        this.load.audio('hitSfx', 'assets/audio/sfx/Hit damage 1.wav');
     }
 
     create() {

@@ -11,13 +11,13 @@ class TitleScene extends Phaser.Scene{
     }
 
     preload() {
-        this.load.image('tileBg', '/assets/images/ui/blue space tilemap pack/space_background_pack/Assets/Blue Version/layered/blue-back.png');
-        this.load.image('tileBgStars', '/assets/images/ui/blue space tilemap pack/space_background_pack/Assets/Blue Version/layered/blue-stars.png');
+        this.load.image('tileBg', 'assets/images/ui/blue space tilemap pack/space_background_pack/Assets/Blue Version/layered/blue-back.png');
+        this.load.image('tileBgStars', 'assets/images/ui/blue space tilemap pack/space_background_pack/Assets/Blue Version/layered/blue-stars.png');
 
-        this.load.audio('menuBgm', '/assets/audio/bgm/Astral Float.m4a');
+        this.load.audio('menuBgm', 'assets/audio/bgm/Astral Float.m4a');
 
-        this.load.image('playButtonNormal','/assets/images/ui/play buttons/playButtonNormal.png');
-        this.load.image('playButtonClicked', '/assets/images/ui/play buttons/playButtonClicked.png');
+        this.load.image('playButtonNormal','assets/images/ui/play buttons/playButtonNormal.png');
+        this.load.image('playButtonClicked', 'assets/images/ui/play buttons/playButtonClicked.png');
     }
 
     create() {
